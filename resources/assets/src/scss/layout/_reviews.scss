@@ -1,0 +1,101 @@
+.reviews {
+  width: 58%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+
+  h2 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 2px;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 25px;
+  }
+
+  &__carousel {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 40px;
+  }
+
+  &__element {
+
+    &--person {
+      background-color: #f0ece7;
+      border-radius: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 75%;
+      margin-bottom: 25px;
+
+      img {
+        border-radius: 300px;
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        margin-right: 10px;
+      }
+    }
+
+    &--quote {
+      margin-left: 20%;
+      font-size: 14px;
+      color: #383B37;
+    }
+  }
+}
+
+.checked {
+  color: #9B6333;
+}
+
+.person-info {
+  display: flex;
+  align-items: center;
+}
+
+.person-rate {
+  margin-right: 15px;
+}
+
+.next-arrow {
+  position: absolute;
+  top: 50%;
+  right: -10%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.back-arrow {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.slick-dots {
+  position: absolute;
+  left: 50%;
+  bottom: -30%;
+  transform: translate(-50%, -50%);
+  display: flex;
+
+  li:not(:last-child) {
+    margin-right: 10px;
+  }
+
+  button {
+    outline: none;
+    border: 4px solid #9b6333;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0;   
+  }
+
+  li.slick-active button {
+    border: 4px solid #383b37;
+  }
+  
+}

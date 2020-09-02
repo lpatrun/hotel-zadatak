@@ -1,0 +1,329 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block header %}
+	<header class="header">
+		<div class="gold-bar">
+			<div class="gold-bar__container">
+				<div class="left-side">
+					<ul>
+						<li>
+							<img src="images/Pin.png" alt="pin"/>
+							Location
+						</li>
+						<li>
+							<img src="images/Envelope.png" alt="mail"/>
+							Mail us
+						</li>
+						<li>
+							<img src="images/LoginKey.png" alt="Login"/>
+							Login
+						</li>
+					</ul>
+				</div>
+
+				<div class="right-side">
+					<img src="images/Search.png" alt="Search"/>
+					<span>DE</span>
+					<span>EN</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="brown-bar">
+			<div class="brown-bar__container">
+				<div class="main-title">
+					<h1>Hotel</h1>
+				</div>
+
+				<div class="main-menu">
+					<ul>
+						<li>Home</li>
+						<li>About</li>
+						<li>Rooms</li>
+						<li>Services</li>
+						<li>Blog</li>
+						<li>Contact</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+{% endblock %}
+
+{% block content %}
+	<div class="banner">
+		<img class="banner__img" src="images/banner.png" alt="banner">
+		<div class="overlay"></div>
+		<div class="banner__cta">
+			<h2>Fell like home, but better.</h2>
+			<p>World-famous. Deeply relaxing.</p>
+			<button class="btn">LEARN MORE</button>
+		</div>
+		<div class="banner__follow">
+			<span>Follow us</span>
+			<img class="banner__social" src="images/face.png">
+			<img class="banner__social" src="images/insta.png">
+		</div>
+
+
+		<div class="banner__carusel">
+			{% for product in products %}
+				<div class="banner-apartment">
+					<img src={{ product.images[0].url }} alt="apartman">
+					<div class="banner-apartment__info">
+						<div>
+							<h4>{{ product.title }}</h4>
+							<p>View details ></p>
+						</div>
+						<div class="banner-apartment__price">
+							<h3>{{ product.formatted_price }}</h3>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+	</div>
+
+	<div class="aboutUs">
+		<div class="aboutUs_cta">
+			<h2>Comfort & Design to relax in Luxury Hotel</h2>
+			<h5>Every day is a new day for relaxation</h5>
+			<button class="btn">about us</button>
+		</div>
+		<div class="aboutUs__quote">
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+																								Pellentesque mattis gravida metus quis varius. Nullam sit amet 
+																								fringilla velit, non pretium nibh. Etiam condimentum diam 
+																								sapien, a hendrerit est pellentesque. Etiam condimentum diam 
+																								sapien, a hendrerit est pellentesque. Etiam condimentum diam 
+																								sapien, a hendrerit est pellentesque.</p>
+			<div class="aboutUs__quote--person">
+				<h5>John Johnson</h5>
+				<p>General manager</p>
+			</div>
+		</div>
+	</div>
+
+	<section class="content">
+		<h2>Best Apartments</h2>
+		<div class="content__apts">
+			{% for product in products %}
+				<a class="apartment" href="room/{{product.slug}}">
+					<img src={{ product.images[0].url }} alt="apartman">
+					<div class="apartment__info">
+						<div>
+							<h4>{{ product.title }}</h4>
+							<p>View details ></p>
+						</div>
+						<div class="apartment__price">
+							<h3>{{ product.formatted_price }}</h3>
+						</div>
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	</section>
+
+	<section class="service">
+		<div class="service__left">
+			<div class="service__group">
+				<img src="images/blacbcgr.png" alt="background" class="service__left__img"/>
+				<div class="service__text">
+					<h2>Excellent service</h2>
+					<h4>Every day is a new day for relaxation.</h4>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+																																				Pellentesque mattis gravida metus quis varius. Nullam sit amet 
+																																				fringilla velit, non pretium nibh. Etiam condimentum diam 
+																																				sapien, a hendrerit est pellentesque. Etiam condimentum diam 
+																																				sapien, a hendrerit est pellentesque. Etiam condimentum diam 
+																																				sapien, a hendrerit est pellentesque.
+					</p>
+					<p class="service__text__more">Learn more ></p>
+				</div>
+			</div>
+
+			<div class="service__offer">
+				<div class="perk">
+					<div class="perk__img">
+						<img src="images/Hotel Single Bed 1.png" alt="bed"/>
+					</div>
+
+				</div>
+
+				<div class="perk">
+					<div class="perk__img">
+						<img src="images/Room Service Bring Plate.png" alt="plate"/>
+					</div>
+
+				</div>
+
+				<div class="perk">
+					<div class="perk__img">
+						<img src="images/Coffee Cup Hot.png" alt="coffee"/>
+					</div>
+				</div>
+			</div>
+
+			<div class="service__texts">
+				<div class="perk__text">
+					<h5>Orthopedic beds</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ispum.</p>
+				</div>
+
+				<div class="perk__text">
+					<h5>Extraordinary cousine</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis gravida.</p>
+				</div>
+
+				<div class="perk__text">
+					<h5>Custom coffee</h5>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+					</p>
+				</div>
+			</div>
+
+		</div>
+		<div class="service__right">
+			<img src="images/maid.png" alt="Maid"/>
+		</div>
+	</section>
+
+	<section class="news">
+		<div class="news__bckgr"></div>
+		<div class="news__title">
+			<h2>Recent news</h2>
+		</div>
+		<div class="news__slider">
+			{% for new in news %}
+				<div class="element">
+					<div class="element__promo">
+						<img src="images/Tags.png" alt="tag"/>
+						<div>
+							<h3>Promo price!</h3>
+							<p>August 25-31</p>
+						</div>
+					</div>
+					<img src={{new.image}} alt="soba"/>
+					<div class="element__text">
+						<div class="element__fade">
+							<h5>{{ new.category }}</h5>
+						</div>
+						<div class="element__title">
+							<h4>{{ new.title }}</h4>
+						</div>
+						<div class="element__desc">
+							<p>{{ new.description }}</p>
+						</div>
+						<div class="element__more">
+							<p>Learn more ></p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+
+		<div class="features">
+			<img src="images/Rectangle22.png" alt="rectangle"/>
+			<div class="features__rectangle">
+				<h2>Discover a Hotel features</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+																														Pellentesque mattis gravida metus quis varius. Nullam sit amet 
+																														fringilla velit, non pretium nibh. Etiam condimentum diam sapien, 
+																														a hendrerit est pellentesque. Etiam condimentum diam sapien, 
+																														a hendrerit est pellentesque.
+				</p>
+				<button class="btn">BOOK NOW</button>
+			</div>
+		</div>
+	</section>
+
+	<section class="reviews">
+		<h2>Guest reviews</h2>
+		<div class="reviews__carousel">
+
+			{% for review in reviews %}
+				<div class="reviews__element">
+					<div class="reviews__element--person">
+						<div class="person-info">
+							<img src={{ review.user.profile_image }} alt={{ review.user.name }}>
+							<div>
+								<h5>{{ review.user.name }}</h5>
+								<p>Copywriter</p>
+							</div>
+						</div>
+						<div class="person-rate">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+					</div>
+					<div class="reviews__element--quote">
+						<p>{{ review.comment }}</p>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+	</section>
+
+{% endblock %}
+
+
+{% block footer %}
+	<footer class="footer">
+		<div class="info">
+			<div class="info__container">
+				<div class="first-col">
+					<div>
+						<h2>Hotel</h2>
+						<p>Every day is a new day for relaxation.</p>
+					</div>
+					<div>
+						<span>Follow us</span>
+						<img class="banner__social" src="images/face.png">
+						<img class="banner__social" src="images/insta.png">
+					</div>
+				</div>
+				<div>
+					<p class="bold-paragraph margina">Address</p>
+					<p class="gray">London</p>
+					<p class="bold-paragraph">Main street 1 London, CA 70413</p>
+					<p class="bold-paragraph margina">Open: 9:30AM 5:30PM</p>
+					<p class="gray">New York</p>
+					<p class="bold-paragraph">Great street Broadway, NT 10013</p>
+					<p class="bold-paragraph">Open: 8:30AM 4:30PM</p>
+				</div>
+				<div class="bold-paragraph">
+					<p class="margina-l">Contact us</p>
+					<p>+44 (800) 456-78-91</p>
+					<p class="margina-l">hotel.london@mail.com</p>
+					<p>+1 (810) 456-78-91</p>
+					<p>hotel.ny@mail.com</p>
+				</div>
+				<div>
+					<p class="margina">Stay in touch</p>
+					<form action="#">
+						<input type="email" placeholder="Your email" class="email-input">
+						<button class="form-button">subscribe</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="legal">
+			<div class="legal__container">
+				<p>@2020, Frontend akademija</p>
+				<div class="legal__container--right">
+					<p>Privacy Policy</p>
+					<p>Site map</p>
+					<p class="gray">All Rights Reserved</p>
+				</div>
+			</div>
+
+		</footer>
+	{% endblock %}

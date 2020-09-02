@@ -1,0 +1,151 @@
+.news {
+  margin-bottom: 50px;
+  position: relative;
+
+  &__bckgr {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    background-color: #f0ece7;
+    height: 60%;
+    width: 100%;
+    z-index: -5;
+
+  }
+
+  &__title {
+    width: 58%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+
+  h2 {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 2px;
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 10px;
+  }
+
+  &__slider {
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 50px;
+  }
+}
+
+.slick-slide {
+  margin: 0 20px;
+}
+
+.element {
+  position: relative;
+  box-shadow: 0px 5px 15px 1px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+
+  img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  &__promo {
+    position: absolute;
+    top: 10%;
+    left: 0;
+    padding: 5px 10px;
+
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+
+    background-color: #9b6333;
+    color: white;
+
+    h3 {
+      font-family: "Playfair Display", serif;
+      font-weight: 800;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    img {
+      width: 26px;
+      height: 25px;
+    }
+  }
+
+  &__text {
+    padding: 10px 15px 25px 15px;
+    background-color: white;
+    margin-top: -5px;
+  }
+
+  &__fade {
+    color: #b2b2b2;
+    margin-bottom: 10px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &__desc {
+    font-size: 12px;
+    line-height: 16px;
+    margin-bottom: 20px;
+  }
+
+  &__more {
+    color: #9b6333;
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+.features {
+  position: relative;
+  margin-right: 21%;
+
+  img {
+    width: 63%;
+  }
+
+  &__rectangle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(0%, -50%);
+    width: 45%;
+    padding: 25px 35px;
+    background-color: white;
+    box-shadow: 0px 5px 30px 1px rgba(0, 0, 0, 0.2);
+
+    p {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+}
+
+.news-next-arrow {
+  position: absolute;
+  top: 50%;
+  right: -8%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.news-back-arrow {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}

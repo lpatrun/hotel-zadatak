@@ -1,0 +1,100 @@
+.banner {
+  position: relative;
+  margin-bottom: 50px;
+
+  &__img {
+    width: 100%;
+  }
+
+  &__cta {
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    color: white;
+    z-index: 10;
+
+    h2 {
+      font-size: 35px;
+      font-family: "Playfair Display", serif;
+      letter-spacing: 2px;
+      font-weight: 800;
+    }
+
+    p {
+      font-size: 18px;
+    }
+  }
+
+  &__follow {
+    z-index: 10;
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+    color: white;
+  }
+
+  &__social {
+    width: 16px;
+    margin-left: 15px;
+  }
+
+  &__carusel {
+    position: absolute !important;
+    top: 55%;
+    left: 40%;
+    width: 60%;
+    z-index: 10;
+  }
+
+  &-apartment {
+    background-color: #f2f2f2;
+    
+
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    &__info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      padding: 25px;
+
+      h4 {
+        color: #383b37;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      p {
+        color: #9b6333;
+      }
+    }
+
+    &__price {
+      text-align: end;
+    }
+  }
+}
+
+.banner__carusel .slick-list{padding:0 20% 0 0 !important}
+
+.main-arrow {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.overlay {
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 99.5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,174 @@
+{% extends 'main_layout.html.twig' %}
+
+{% block header %}
+	{{ dump(product) }}
+	<header class="header">
+		<div class="gold-bar">
+			<div class="gold-bar__container">
+				<div class="left-side">
+					<ul>
+						<li>
+							<img src="../images/Pin.png" alt="pin"/>
+							Location
+						</li>
+						<li>
+							<img src="../images/Envelope.png" alt="mail"/>
+							Mail us
+						</li>
+						<li>
+							<img src="../images/LoginKey.png" alt="Login"/>
+							Login
+						</li>
+					</ul>
+				</div>
+
+				<div class="right-side">
+					<img src="../images/Search.png" alt="Search"/>
+					<span>DE</span>
+					<span>EN</span>
+				</div>
+			</div>
+		</div>
+
+		<div class="brown-bar">
+			<div class="brown-bar__container">
+				<div class="main-title">
+					<h1>Hotel</h1>
+				</div>
+
+				<div class="main-menu">
+					<ul>
+						<li>Home</li>
+						<li>About</li>
+						<li>Rooms</li>
+						<li>Services</li>
+						<li>Blog</li>
+						<li>Contact</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</header>
+
+{% endblock %}
+
+{% block content %}
+	<section class="single-room">
+		<div class="single-room__main-img">
+			<img src={{ product.images[0].url }}/>
+		</div>
+		<div class="single-room__images">
+			{% for image in product.images %}
+				<img src={{ image.url }}>
+			{% endfor %}
+		</div>
+
+		<div class="single-room__informations">
+			<div class="room-info">
+				<h1>{{ product.title }}</h1>
+
+				<div class="basic-info-row">
+					<div class="basic-info-row__item">
+						<img src="../images/Person.png">
+						<span>{{ product.max_adults }}
+							adults</span>
+					</div>
+					<div class="basic-info-row__item">
+						<img src="../images/BabyBoy.png">
+						<span>{{ product.max_children }}
+							children</span>
+					</div>
+					<div class="basic-info-row__item">
+						<img src="../images/Dimensions.png">
+						<span>{{ product.squares }}
+							m2</span>
+					</div>
+				</div>
+
+				<div class="room-info__random-text">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque mattis gravida metus quis varius. Nullam sit amet fringilla velit, non pretium nibh. Etiam condimentum diam sapien, a hendrerit est pellentesque.</p>
+					<p>Etiam condimentum diam sapien, a hendrerit est pellentesque. Etiam condimentum diam sapien, a hendrerit est pellentesque.</p>
+				</div>
+
+				<span class="room-services">Room services</span>
+				<div class="room-services__box">
+					{% for service in product.services %}
+						{% for flag, key in service %}
+							<div>{{key}}:
+								{{flag}}</div>
+						{% endfor %}
+					{% endfor %}
+				</div>
+
+				<span class="hotel-rules">Hotel rules</span>
+				<div class="hotel-rules__box">
+					<ul>
+						{% for rule in product.hotel_rules %}
+							<li>-
+								{{ rule }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+
+			</div>
+
+			<div class="room-book">
+				<h2>Start booking</h2>
+			</div>
+			<div></section>
+		{% endblock %}
+
+		{% block footer %}
+			<footer class="footer">
+				<div class="info">
+					<div class="info__container">
+						<div class="first-col">
+							<div>
+								<h2>Hotel</h2>
+								<p>Every day is a new day for relaxation.</p>
+							</div>
+							<div>
+								<span>Follow us</span>
+								<img class="banner__social" src="../images/face.png">
+								<img class="banner__social" src="../images/insta.png">
+							</div>
+						</div>
+						<div>
+							<p class="bold-paragraph margina">Address</p>
+							<p class="gray">London</p>
+							<p class="bold-paragraph">Main street 1 London, CA 70413</p>
+							<p class="bold-paragraph margina">Open: 9:30AM 5:30PM</p>
+							<p class="gray">New York</p>
+							<p class="bold-paragraph">Great street Broadway, NT 10013</p>
+							<p class="bold-paragraph">Open: 8:30AM 4:30PM</p>
+						</div>
+						<div class="bold-paragraph">
+							<p class="margina-l">Contact us</p>
+							<p>+44 (800) 456-78-91</p>
+							<p class="margina-l">hotel.london@mail.com</p>
+							<p>+1 (810) 456-78-91</p>
+							<p>hotel.ny@mail.com</p>
+						</div>
+						<div>
+							<p class="margina">Stay in touch</p>
+							<form action="#">
+								<input type="email" placeholder="Your email" class="email-input">
+								<button class="form-button">subscribe</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="legal">
+					<div class="legal__container">
+						<p>@2020, Frontend akademija</p>
+						<div class="legal__container--right">
+							<p>Privacy Policy</p>
+							<p>Site map</p>
+							<p class="gray">All Rights Reserved</p>
+						</div>
+					</div>
+
+				</footer>
+			{% endblock %}
