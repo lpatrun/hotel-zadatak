@@ -1,7 +1,6 @@
 {% extends 'main_layout.html.twig' %}
 
 {% block header %}
-	{{ dump(product) }}
 	<header class="header">
 		<div class="gold-bar">
 			<div class="gold-bar__container">
@@ -32,9 +31,9 @@
 
 		<div class="brown-bar">
 			<div class="brown-bar__container">
-				<div class="main-title">
+				<a class="main-title" href="/">
 					<h1>Hotel</h1>
-				</div>
+				</a>
 
 				<div class="main-menu">
 					<ul>
@@ -55,13 +54,25 @@
 
 {% block content %}
 	<section class="single-room">
-		<div class="single-room__main-img">
-			<img src={{ product.images[0].url }}/>
-		</div>
-		<div class="single-room__images">
+
+		<div class="single-room__container">
 			{% for image in product.images %}
-				<img src={{ image.url }}>
+				<div class="single-room__hightlighted">
+					<img src={{ image.url }}>
+				</div>
 			{% endfor %}
+
+			<a class="prev" id="prev">❮</a>
+			<a class="next" id="next">❯</a>
+
+			<div class="single-room__carusel">
+				{% for image in product.images %}
+					<div class="single-room__carusel--column">
+						<img src={{ image.url }} class="caruselImg" data-itemid={{loop.index}}>
+					</div>
+				{% endfor %}
+			</div>
+
 		</div>
 
 		<div class="single-room__informations">
@@ -93,10 +104,15 @@
 
 				<span class="room-services">Room services</span>
 				<div class="room-services__box">
+
 					{% for service in product.services %}
-						{% for flag, key in service %}
-							<div>{{key}}:
-								{{flag}}</div>
+						{% for key, value in service|cast_to_array %}
+							{% if value == 1 %}
+								<div class="room-services__box--item">
+									<img src="../images/check.png" alt="check"/>
+									<span>{{key}}</span>
+								</div>
+							{% endif %}
 						{% endfor %}
 					{% endfor %}
 				</div>
@@ -113,62 +129,205 @@
 
 			</div>
 
-			<div class="room-book">
-				<h2>Start booking</h2>
-			</div>
-			<div></section>
-		{% endblock %}
+			<div class="right-column">
+				<div class="room-book">
+					<h2>Start booking</h2>
+					<span>{{ product.formatted_price }}</span>
+					<p>Dates</p>
+					<div class="room-book__dates">
+						<div class="room-book__dates--container">
+							<img src="../images/calendar_today.png" alt="Baby boy"/>
+							<input id="start-date" placeholder="From Date"/>
+						</div>
 
-		{% block footer %}
-			<footer class="footer">
-				<div class="info">
-					<div class="info__container">
-						<div class="first-col">
-							<div>
-								<h2>Hotel</h2>
-								<p>Every day is a new day for relaxation.</p>
+						<div class="room-book__dates--container">
+							<img src="../images/calendar_today.png" alt="Baby boy"/>
+							<input id="end-date" placeholder="To Date"/>
+						</div>
+					</div>
+
+					<p>Guests</p>
+					<div class="room-book__guests">
+						<div class="room-book__guests--container">
+							<img src="../images/Person.png" alt="person"/>
+							<div class="quantity">
+								<input placeholder="Adult" type="number" min="1" max="12" step="1"/>
 							</div>
-							<div>
-								<span>Follow us</span>
-								<img class="banner__social" src="../images/face.png">
-								<img class="banner__social" src="../images/insta.png">
+						</div>
+						<div class="room-book__guests--container">
+							<img src="../images/BabyBoy.png" alt="Baby boy"/>
+							<div class="quantity">
+								<input placeholder="Children" type="number" min="1" max="12" step="1"/>
 							</div>
 						</div>
-						<div>
-							<p class="bold-paragraph margina">Address</p>
-							<p class="gray">London</p>
-							<p class="bold-paragraph">Main street 1 London, CA 70413</p>
-							<p class="bold-paragraph margina">Open: 9:30AM 5:30PM</p>
-							<p class="gray">New York</p>
-							<p class="bold-paragraph">Great street Broadway, NT 10013</p>
-							<p class="bold-paragraph">Open: 8:30AM 4:30PM</p>
+					</div>
+					<button class="btn btn-book">check availability</button>
+				</div>
+
+				<div class="may-like">
+					<h2>You may also like</h2>
+					<div class="may-like__grid">
+						<div class="may-like__room">
+							<img src="../images/NatureRoom.png" alt="nature room">
+							<div class="may-like__room--info">
+								<h3>Nature Room</h3>
+								<div class="may-like__room--info--bottom">
+									<p class="book-now">Book now ></p>
+									<p>€ 150.00</p>
+								</div>
+							</div>
 						</div>
-						<div class="bold-paragraph">
-							<p class="margina-l">Contact us</p>
-							<p>+44 (800) 456-78-91</p>
-							<p class="margina-l">hotel.london@mail.com</p>
-							<p>+1 (810) 456-78-91</p>
-							<p>hotel.ny@mail.com</p>
-						</div>
-						<div>
-							<p class="margina">Stay in touch</p>
-							<form action="#">
-								<input type="email" placeholder="Your email" class="email-input">
-								<button class="form-button">subscribe</button>
-							</form>
+						<div class="may-like__room">
+							<img src="../images/PremiumRoom.png" alt="nature room">
+							<div class="may-like__room--info">
+								<h3>Premium Room</h3>
+								<div class="may-like__room--info--bottom">
+									<p class="book-now">Book now ></p>
+									<p>€ 350.00</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<div class="legal">
-					<div class="legal__container">
-						<p>@2020, Frontend akademija</p>
-						<div class="legal__container--right">
-							<p>Privacy Policy</p>
-							<p>Site map</p>
-							<p class="gray">All Rights Reserved</p>
+
+		</div>
+
+		<div class="comments">
+			<p class="comments__text">Comments</p>
+
+			{% for comment in product.comments %}
+				<div class="comment__container">
+					<div class="comment__comment">
+						<div class="comment__top-bar">
+							<div class="comment__person">
+								<img src="..{{ comment.user.profile_image }}" alt={{ comment.user.name }}>
+								<div class="comment__basic-info">
+									<p class="comment__basic-info--name">{{ comment.user.name }}</p>
+									<p class="comment__basic-info--date">28 Aug 2020, 11:16PM</p>
+								</div>
+							</div>
+							<div class="comment__return">
+								<img src="../images/reply.png">
+								<span>Reply</span>
+							</div>
+						</div>
+						<div class="comment__comment-text">
+							<p>{{ comment.comment }}</p>
 						</div>
 					</div>
+					<div class="comment__reply">
+						{% if comment.replies is not empty %}
+							{% for reply in comment.replies %}
+								<div class="comment__top-bar">
+									<div class="comment__person">
+										<img src="..{{ reply.user.profile_image }}" alt={{ reply.user.name }}>
+										<div class="comment__basic-info">
+											<p class="comment__basic-info--name">{{ reply.user.name }}</p>
+											<p class="comment__basic-info--date">28 Aug 2020, 11:16PM</p>
+										</div>
+									</div>
+									<div class="comment__return">
+										<img src="../images/reply.png">
+										<span>Reply</span>
+									</div>
+								</div>
+								<div class="comment__comment-text">
+									<p>{{ reply.comment }}</p>
+								</div>
+							{% endfor %}
+						{% endif %}
+					</div>
+				</div>
+			{% endfor %}
 
-				</footer>
-			{% endblock %}
+			<p class="comments__text">Leave Comment</p>
+			<div class="leave-comment">
+				<form action="#">
+					<div class="leave-comment__upper-grid">
+						<label class="leave-comment__label" for="name">Name</label>
+						<label class="leave-comment__label" for="email">Email</label>
+
+						<input class="leave-comment__input" type="text" id="name" name="name" placeholder="Your name">
+						<input class="leave-comment__input" type="email" id="email" name="email" placeholder="Your email">
+					</div>
+					<div class="leave-comment__flex">
+						<label class="leave-comment__label" for="comment">Comment</label>
+						<div id="the-count">
+							<span id="current">0</span>
+							<span id="maximum">/ 500</span>
+						</div>
+					</div>
+					<textarea class="leave-comment__textarea" id="comment" name="comment" placeholder="Your Comment"></textarea>
+
+					<label class="container">Save my name and email in this browser for the next time I comment.
+						<input type="checkbox">
+						<span class="checkmark"></span>
+					</label>
+
+					<input class="btn btn--black" type="submit" value="COMMENT">
+				</form>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
+{% block footer %}
+	<footer class="footer">
+		<div class="info">
+			<div class="info__container">
+				<div class="first-col">
+					<div>
+						<h2>Hotel</h2>
+						<p>Every day is a new day for relaxation.</p>
+					</div>
+					<div>
+						<span>Follow us</span>
+						<img class="banner__social" src="../images/face.png">
+						<img class="banner__social" src="../images/insta.png">
+					</div>
+				</div>
+				<div>
+					<p class="bold-paragraph margina">Address</p>
+					<p class="gray">London</p>
+					<p class="bold-paragraph">Main street 1 London, CA 70413</p>
+					<p class="bold-paragraph margina">Open: 9:30AM 5:30PM</p>
+					<p class="gray">New York</p>
+					<p class="bold-paragraph">Great street Broadway, NT 10013</p>
+					<p class="bold-paragraph">Open: 8:30AM 4:30PM</p>
+				</div>
+				<div class="bold-paragraph">
+					<p class="margina-l">Contact us</p>
+					<p>+44 (800) 456-78-91</p>
+					<p class="margina-l">hotel.london@mail.com</p>
+					<p>+1 (810) 456-78-91</p>
+					<p>hotel.ny@mail.com</p>
+				</div>
+				<div>
+					<p class="margina">Stay in touch</p>
+					<form action="#">
+						<input type="email" placeholder="Your email" class="email-input">
+						<button class="form-button">subscribe</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="legal">
+			<div class="legal__container">
+				<p>@2020, Frontend akademija</p>
+				<div class="legal__container--right">
+					<p>Privacy Policy</p>
+					<p>Site map</p>
+					<p class="gray">All Rights Reserved</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+{% endblock %}
+
+{% block footerScripts %}
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"/>
+	<script type="text/javascript" src="	https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+{% endblock %}

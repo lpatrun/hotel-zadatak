@@ -11,4 +11,9 @@
   outline: none;
   cursor: pointer;
   margin-top: 20px;
+
+  &--black {
+    background-color: #383b37;
+    font-weight: 400;
+  }
 }

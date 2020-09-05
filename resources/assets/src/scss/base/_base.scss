@@ -11,6 +11,19 @@ a {
     color: inherit;
 }
 
-ul li  {
+ul li {
     list-style-type: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #272525;
+    border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9b6333;
 }

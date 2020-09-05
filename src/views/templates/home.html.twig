@@ -70,7 +70,7 @@
 
 		<div class="banner__carusel">
 			{% for product in products %}
-				<div class="banner-apartment">
+				<a class="banner-apartment" href="room/{{product.slug}}">
 					<img src={{ product.images[0].url }} alt="apartman">
 					<div class="banner-apartment__info">
 						<div>
@@ -81,7 +81,7 @@
 							<h3>{{ product.formatted_price }}</h3>
 						</div>
 					</div>
-				</div>
+				</a>
 			{% endfor %}
 		</div>
 
@@ -300,9 +300,9 @@
 				</div>
 				<div class="bold-paragraph">
 					<p class="margina-l">Contact us</p>
-					<p>+44 (800) 456-78-91</p>
+					<p><a href="tel:+448004567891">+44 (800) 456-78-91</a></p>
 					<p class="margina-l">hotel.london@mail.com</p>
-					<p>+1 (810) 456-78-91</p>
+					<p><a href="tel:+18104567891">+1 (810) 456-78-91</a></p>
 					<p>hotel.ny@mail.com</p>
 				</div>
 				<div>

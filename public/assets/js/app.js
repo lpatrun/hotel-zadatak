@@ -68,6 +68,10 @@
 /***/ "./resources/assets/src/js/app.js":
 /***/ (function(module, exports) {
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 $(document).ready(function () {
   $('.reviews__carousel').slick({
     infinite: true,
@@ -96,6 +100,125 @@ $(document).ready(function () {
     slidesToScroll: 2,
     prevArrow: '<img class="main-arrow" src="images/arrow_back_white.png"/>',
     nextArrow: ''
+  });
+});
+
+$(function () {
+  var url = window.location.href.split('/');
+  var loadedRoom = url[url.length - 1];
+
+  var singleRoom = [];
+  var disabledDays = [];
+
+  $.getJSON("../assets/js/home_products.json", function (json) {
+    var _ref;
+
+    json.forEach(function (element) {
+      if (element.slug === loadedRoom) {
+        singleRoom = [].concat(_toConsumableArray(element.reserved_dates));
+      }
+    });
+    singleRoom.forEach(function (elem) {
+      disabledDays.push(elem.date);
+    });
+
+    new Litepicker((_ref = {
+      element: document.getElementById('start-date'),
+      elementEnd: document.getElementById('end-date'),
+      singleMode: false
+    }, _defineProperty(_ref, 'singleMode', false), _defineProperty(_ref, 'lockDays', disabledDays), _defineProperty(_ref, 'disallowLockDaysInRange', true), _ref));
+  });
+});
+
+$(document).ready(function () {
+  jQuery('<div class="quantity-nav"><button class="quantity-button quantity-up">+</button><button class="quantity-button quantity-down">-</button></div>').insertAfter('.quantity input');
+  jQuery('.quantity').each(function () {
+    var spinner = jQuery(this),
+        input = spinner.find('input[type="number"]'),
+        btnUp = spinner.find('.quantity-up'),
+        btnDown = spinner.find('.quantity-down'),
+        min = input.attr('min'),
+        max = input.attr('max');
+
+    btnUp.click(function () {
+      var oldValue = parseInt(input.val());
+      if (isNaN(oldValue)) {
+        oldValue = 0;
+      }
+      if (oldValue >= max) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue + 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+
+    btnDown.click(function () {
+      var oldValue = parseInt(input.val());
+      if (isNaN(oldValue)) {
+        oldValue = 2;
+      }
+      if (oldValue <= min) {
+        var newVal = oldValue;
+      } else {
+        var newVal = oldValue - 1;
+      }
+      spinner.find("input").val(newVal);
+      spinner.find("input").trigger("change");
+    });
+  });
+});
+
+//single room slider
+
+$(document).ready(function () {
+  document.getElementById("prev").addEventListener("click", minusSlides);
+  document.getElementById("next").addEventListener("click", plusSlides);
+
+  document.querySelectorAll('.caruselImg').forEach(function (item) {
+    item.addEventListener('click', currentSlide);
+  });
+
+  var slideIndex = 1;
+  showSlides(slideIndex);
+
+  function minusSlides() {
+    showSlides(slideIndex -= 1);
+  }
+
+  function plusSlides() {
+    showSlides(slideIndex += 1);
+  }
+
+  function currentSlide(n) {
+    var index = n.srcElement.dataset.itemid;
+    showSlides(slideIndex = index);
+  }
+
+  function showSlides(n) {
+    var i = void 0;
+    var slides = document.getElementsByClassName("single-room__hightlighted");
+    var dots = document.getElementsByClassName("caruselImg");
+    if (n > slides.length) {
+      slideIndex = 1;
+    }
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+  }
+
+  $("#comment").keyup(function () {
+    var characterCount = $(this).val().length;
+    $("#current").text(characterCount);
   });
 });
 

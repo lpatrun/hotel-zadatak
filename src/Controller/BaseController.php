@@ -32,6 +32,10 @@ class BaseController
 
         $twig->addExtension(new DebugExtension());
 
+        $twig->addFilter(new \Twig\TwigFilter('cast_to_array', function ($object) {
+            return (array)$object;
+        }));
+
         try {
             $this->response->getBody()->write(
                 $twig->render($template, $data)
