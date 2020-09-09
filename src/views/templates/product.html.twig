@@ -1,8 +1,10 @@
 {% extends 'main_layout.html.twig' %}
 
+{% block page_title %}{{product.title}}{% endblock %}
+
 {% block header %}
 	<header class="header">
-		<div class="gold-bar">
+		<div class="gold-bar top-bar-font">
 			<div class="gold-bar__container">
 				<div class="left-side">
 					<ul>
@@ -31,11 +33,11 @@
 
 		<div class="brown-bar">
 			<div class="brown-bar__container">
-				<a class="main-title" href="/">
+				<a class="main-title hotel-font" href="/">
 					<h1>Hotel</h1>
 				</a>
 
-				<div class="main-menu">
+				<div class="main-menu main-menu-font">
 					<ul>
 						<li>Home</li>
 						<li>About</li>
@@ -49,7 +51,6 @@
 		</div>
 
 	</header>
-
 {% endblock %}
 
 {% block content %}

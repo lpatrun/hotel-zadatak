@@ -3,18 +3,6 @@
   margin: 0 auto;
   margin-bottom: 50px;
   
-  h2 {
-    font-family: "Playfair Display", serif;
-    color: #383b37;
-    letter-spacing: 2px;
-    font-size: 32px;
-    font-weight: 800;
-  }
-
-  p {
-    font-size: 14px;
-  }
-
   &__apts {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -33,18 +21,8 @@
 
   &__info {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 2fr 1fr;
     padding: 15px 10px;
-
-    h4 {
-      color: #383b37;
-      margin-bottom: 5px;
-      font-size: 14px;
-    }
-
-    p {
-      color: #9b6333;
-    }
   }
 
   &__price {

@@ -2,9 +2,163 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h2 {
+.hotel-font {
   font-family: "Playfair Display", serif;
-  letter-spacing: 2px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 35px;
+}
+
+.hotel-font-small {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+}
+
+.main-title-font {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
   font-size: 32px;
-  font-weight: 800;
+  line-height: 56px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: 2px;
+  color: $color-main-black;
+}
+
+.sub-title {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.sub-title-higher {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+//call-to-action
+.cta-text,
+.main-menu-font {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.paragraph {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.price-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+.promo-text {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.date-text {
+  font-family: Arial;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 23px;
+}
+
+.medium-normal-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.medium-bold-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.footer-font {
+  font-family: Arial;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.top-bar-font {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.booking-font {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 41px;
+}
+
+.gold-text {
+  color: $color-main-gold;
+}
+
+.black-text {
+  color: $color-main-black;
+}
+
+.gray-text {
+  color: $color-gray-3;
+}
+
+.legal-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 25px;
+}
+
+.legal-bold-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 25px;
 }

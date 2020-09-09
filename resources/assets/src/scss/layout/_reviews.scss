@@ -4,10 +4,6 @@
   margin-bottom: 50px;
 
   h2 {
-    font-family: "Playfair Display", serif;
-    letter-spacing: 2px;
-    font-size: 32px;
-    font-weight: 800;
     margin-bottom: 25px;
   }
 
@@ -40,14 +36,12 @@
 
     &--quote {
       margin-left: 20%;
-      font-size: 14px;
-      color: #383B37;
     }
   }
 }
 
 .checked {
-  color: #9B6333;
+  color: $color-main-gold;
 }
 
 .person-info {

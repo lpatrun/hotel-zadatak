@@ -33,11 +33,164 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-h2 {
+.hotel-font {
   font-family: "Playfair Display", serif;
-  letter-spacing: 2px;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 35px;
+}
+
+.hotel-font-small {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 36px;
+}
+
+.main-title-font {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
   font-size: 32px;
-  font-weight: 800;
+  line-height: 56px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 42px;
+  letter-spacing: 2px;
+  color: #383b37;
+}
+
+.sub-title {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.sub-title-higher {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.cta-text,
+.main-menu-font {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.paragraph {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.price-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 31px;
+}
+
+.promo-text {
+  font-family: "Playfair Display", serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 23px;
+}
+
+.date-text {
+  font-family: Arial;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 23px;
+}
+
+.medium-normal-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.medium-bold-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.footer-font {
+  font-family: Arial;
+  font-style: normal;
+  font-size: 12px;
+  line-height: 25px;
+}
+
+.top-bar-font {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.bold-text {
+  font-weight: bold;
+}
+
+.booking-font {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 41px;
+}
+
+.gold-text {
+  color: #9b6333;
+}
+
+.black-text {
+  color: #383b37;
+}
+
+.gray-text {
+  color: #d0d0d0;
+}
+
+.legal-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 25px;
+}
+
+.legal-bold-text {
+  font-family: Arial;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10px;
+  line-height: 25px;
 }
 
 .btn {
@@ -49,7 +202,6 @@ h2 {
   color: white;
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-weight: bold;
   border: none;
   outline: none;
   cursor: pointer;
@@ -69,20 +221,12 @@ h2 {
   margin-bottom: 50px;
 }
 
+.aboutUs__quote {
+  color: #383b37;
+}
+
 .aboutUs__quote--person {
   margin-top: 20px;
-}
-
-.aboutUs h2 {
-  font-family: "Playfair Display", serif;
-  color: #383b37;
-  letter-spacing: 2px;
-  font-size: 32px;
-  font-weight: 800;
-}
-
-.aboutUs p {
-  font-size: 14px;
 }
 
 .banner {
@@ -96,21 +240,10 @@ h2 {
 
 .banner__cta {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 15%;
   color: white;
   z-index: 10;
-}
-
-.banner__cta h2 {
-  font-size: 35px;
-  font-family: "Playfair Display", serif;
-  letter-spacing: 2px;
-  font-weight: 800;
-}
-
-.banner__cta p {
-  font-size: 18px;
 }
 
 .banner__follow {
@@ -151,18 +284,16 @@ h2 {
   padding: 25px;
 }
 
-.banner-apartment__info h4 {
-  color: #383b37;
-  margin-bottom: 5px;
-  font-size: 14px;
-}
-
-.banner-apartment__info p {
-  color: #9b6333;
-}
-
 .banner-apartment__price {
-  text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .banner__carusel .slick-list {
@@ -194,18 +325,6 @@ h2 {
   margin-bottom: 50px;
 }
 
-.content h2 {
-  font-family: "Playfair Display", serif;
-  color: #383b37;
-  letter-spacing: 2px;
-  font-size: 32px;
-  font-weight: 800;
-}
-
-.content p {
-  font-size: 14px;
-}
-
 .content__apts {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -226,18 +345,8 @@ h2 {
 
 .apartment__info {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 2fr 1fr;
   padding: 15px 10px;
-}
-
-.apartment__info h4 {
-  color: #383b37;
-  margin-bottom: 5px;
-  font-size: 14px;
-}
-
-.apartment__info p {
-  color: #9b6333;
 }
 
 .apartment__price {
@@ -269,10 +378,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-.info__container p {
-  font-size: 14px;
-}
-
 .legal {
   background-color: #1d1d1d;
   color: #fff;
@@ -301,22 +406,6 @@ h2 {
   -webkit-column-gap: 15px;
      -moz-column-gap: 15px;
           column-gap: 15px;
-}
-
-.legal__container p {
-  font-size: 12px;
-}
-
-.gray {
-  color: #d0d0d0;
-}
-
-.bigger-paragraph {
-  font-size: 16px;
-}
-
-.bold-paragraph {
-  font-weight: bold;
 }
 
 .margina {
@@ -358,13 +447,12 @@ h2 {
   border-radius: 150px;
   font-size: 13px;
   margin-top: 15px;
-  margin-left: 33px;
+  margin-left: 50px;
   cursor: pointer;
 }
 
 .header {
   width: 100%;
-  font-family: Arial;
 }
 
 .gold-bar {
@@ -375,7 +463,6 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  letter-spacing: 1px;
   padding: 10px 0;
 }
 
@@ -455,13 +542,6 @@ h2 {
   cursor: pointer;
 }
 
-.main-title h1 {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 2px;
-  font-size: 35px;
-  font-weight: 800;
-}
-
 .main-menu {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
@@ -506,10 +586,6 @@ h2 {
 }
 
 .news h2 {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 2px;
-  font-size: 32px;
-  font-weight: 800;
   margin-bottom: 10px;
 }
 
@@ -536,7 +612,7 @@ h2 {
 
 .element img {
   width: 100%;
-  height: 250px;
+  height: 225px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -557,17 +633,6 @@ h2 {
           column-gap: 10px;
   background-color: #9b6333;
   color: white;
-}
-
-.element__promo h3 {
-  font-family: "Playfair Display", serif;
-  font-weight: 800;
-  margin-bottom: 5px;
-  font-size: 16px;
-}
-
-.element__promo p {
-  font-size: 12px;
 }
 
 .element__promo img {
@@ -591,15 +656,7 @@ h2 {
 }
 
 .element__desc {
-  font-size: 12px;
-  line-height: 16px;
   margin-bottom: 20px;
-}
-
-.element__more {
-  color: #9b6333;
-  font-weight: bold;
-  font-size: 14px;
 }
 
 .features {
@@ -622,11 +679,6 @@ h2 {
   background-color: white;
   -webkit-box-shadow: 0px 5px 30px 1px rgba(0, 0, 0, 0.2);
           box-shadow: 0px 5px 30px 1px rgba(0, 0, 0, 0.2);
-}
-
-.features__rectangle p {
-  font-size: 12px;
-  line-height: 16px;
 }
 
 .news-next-arrow {
@@ -654,10 +706,6 @@ h2 {
 }
 
 .reviews h2 {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 2px;
-  font-size: 32px;
-  font-weight: 800;
   margin-bottom: 25px;
 }
 
@@ -697,12 +745,10 @@ h2 {
 
 .reviews__element--quote {
   margin-left: 20%;
-  font-size: 14px;
-  color: #383B37;
 }
 
 .checked {
-  color: #9B6333;
+  color: #9b6333;
 }
 
 .person-info {
@@ -800,14 +846,8 @@ h2 {
   margin-bottom: 15px;
 }
 
-.service__text p {
-  font-size: 13px;
-  line-height: 20px;
-}
-
 .service__text__more {
   margin-top: 15px;
-  color: #9b6333;
 }
 
 .service__right img {
@@ -866,10 +906,6 @@ h2 {
   bottom: -5px;
   position: absolute;
   width: 35%;
-}
-
-.perk__text p {
-  font-size: 13px;
 }
 
 .single-room {

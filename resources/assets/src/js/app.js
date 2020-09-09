@@ -1,4 +1,4 @@
-$(document).ready(function () {
+if (window.location.href === 'http://localhost:8080/') {
   $('.reviews__carousel').slick({
     infinite: true,
     slidesToShow: 2,
@@ -7,9 +7,7 @@ $(document).ready(function () {
     prevArrow: '<img class="back-arrow" src="images/arrow_back.png"/>',
     dots: true
   });
-});
 
-$(document).ready(function () {
   $('.news__slider').slick({
     infinite: true,
     slidesToShow: 2,
@@ -17,9 +15,7 @@ $(document).ready(function () {
     nextArrow: '<img class="news-next-arrow" src="images/arrow_next.png"/>',
     prevArrow: '<img class="news-back-arrow" src="images/arrow_back.png"/>',
   });
-});
 
-$(document).ready(function () {
   $('.banner__carusel').slick({
     infinite: true,
     slidesToShow: 2,
@@ -27,10 +23,9 @@ $(document).ready(function () {
     prevArrow: '<img class="main-arrow" src="images/arrow_back_white.png"/>',
     nextArrow: ''
   });
-});
-
-
-$(function () {
+}
+else {
+  //kalendar
   const url = window.location.href.split('/');
   const loadedRoom = url[url.length - 1];
 
@@ -57,9 +52,8 @@ $(function () {
     });
 
   });
-});
 
-$(document).ready(function () {
+  //custom inkrementi
   jQuery('<div class="quantity-nav"><button class="quantity-button quantity-up">+</button><button class="quantity-button quantity-down">-</button></div>').insertAfter('.quantity input');
   jQuery('.quantity').each(function () {
     var spinner = jQuery(this),
@@ -98,11 +92,8 @@ $(document).ready(function () {
     });
 
   });
-});
 
-//single room slider
-
-$(document).ready(function () {
+  //single room slider
   document.getElementById("prev").addEventListener("click", minusSlides);
   document.getElementById("next").addEventListener("click", plusSlides);
 
@@ -146,6 +137,6 @@ $(document).ready(function () {
     var characterCount = $(this).val().length;
     $("#current").text(characterCount);
   });
-})
+}
 
 

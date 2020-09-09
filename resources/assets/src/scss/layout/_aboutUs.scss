@@ -8,21 +8,10 @@
   margin-bottom: 50px;
 
   &__quote {
+    color: $color-main-black;
 
     &--person {
       margin-top: 20px;
     }
-  }
-
-  h2 {
-    font-family: "Playfair Display", serif;
-    color: #383b37;
-    letter-spacing: 2px;
-    font-size: 32px;
-    font-weight: 800;
-  }
-
-  p {
-    font-size: 14px;
   }
 }
