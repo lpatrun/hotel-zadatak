@@ -25,34 +25,6 @@ if (window.location.href === 'http://localhost:8080/') {
   });
 }
 else {
-  //kalendar
-  const url = window.location.href.split('/');
-  const loadedRoom = url[url.length - 1];
-
-  let singleRoom = [];
-  let disabledDays = [];
-
-  $.getJSON("../assets/js/home_products.json", function (json) {
-    json.forEach(element => {
-      if (element.slug === loadedRoom) {
-        singleRoom = [...element.reserved_dates]
-      }
-    });
-    singleRoom.forEach(elem => {
-      disabledDays.push(elem.date)
-    });
-
-    new Litepicker({
-      element: document.getElementById('start-date'),
-      elementEnd: document.getElementById('end-date'),
-      singleMode: false,
-      singleMode: false,
-      lockDays: disabledDays,
-      disallowLockDaysInRange: true
-    });
-
-  });
-
   //custom inkrementi
   jQuery('<div class="quantity-nav"><button class="quantity-button quantity-up">+</button><button class="quantity-button quantity-down">-</button></div>').insertAfter('.quantity input');
   jQuery('.quantity').each(function () {

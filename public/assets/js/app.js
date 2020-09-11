@@ -68,10 +68,6 @@
 /***/ "./resources/assets/src/js/app.js":
 /***/ (function(module, exports) {
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
-
 if (window.location.href === 'http://localhost:8080/') {
   $('.reviews__carousel').slick({
     infinite: true,
@@ -130,32 +126,6 @@ if (window.location.href === 'http://localhost:8080/') {
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
   };
-
-  //kalendar
-  var url = window.location.href.split('/');
-  var loadedRoom = url[url.length - 1];
-
-  var singleRoom = [];
-  var disabledDays = [];
-
-  $.getJSON("../assets/js/home_products.json", function (json) {
-    var _ref;
-
-    json.forEach(function (element) {
-      if (element.slug === loadedRoom) {
-        singleRoom = [].concat(_toConsumableArray(element.reserved_dates));
-      }
-    });
-    singleRoom.forEach(function (elem) {
-      disabledDays.push(elem.date);
-    });
-
-    new Litepicker((_ref = {
-      element: document.getElementById('start-date'),
-      elementEnd: document.getElementById('end-date'),
-      singleMode: false
-    }, _defineProperty(_ref, 'singleMode', false), _defineProperty(_ref, 'lockDays', disabledDays), _defineProperty(_ref, 'disallowLockDaysInRange', true), _ref));
-  });
 
   //custom inkrementi
   jQuery('<div class="quantity-nav"><button class="quantity-button quantity-up">+</button><button class="quantity-button quantity-down">-</button></div>').insertAfter('.quantity input');
